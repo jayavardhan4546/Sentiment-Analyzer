@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <p><strong>Input Text:</strong> {{ text }}</p>
+    <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+    <p><strong>Emotions Detected:</strong> {{ emotions }}</p>
+    {% if emotions %}
+    <img src="{{ url_for('static', filename='graph.png') }}" alt="Emotion Distribution Graph">
+    {% endif %}
+    <br><br>
+    <a href="{{ url_for('index') }}">Analyze another text</a>
+</body>
+</html>
